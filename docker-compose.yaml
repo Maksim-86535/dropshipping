@@ -28,10 +28,24 @@ services:
       - ./backend/backend:/app/backend  
       - ./backend/manage.py:/app/manage.py
       - ./backend/pyproject.toml:/app/pyproject.toml
-      - ./backend/uv.lock:/app/uv.loc
+      - ./backend/uv.lock:/app/uv.lock
+      - ./backend/products:/app/products
+      - ./backend/users:/app/users
     environment:
       DB_HOST: database
-    command: python manage.py runserver 0.0.0.0:8000
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+  
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    command: ["npm", "run", "dev", "--", "--host"]
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    expose:
+      - 5173
+    ports:
+      - "5173:5173"
 
 volumes:
   pgdata:

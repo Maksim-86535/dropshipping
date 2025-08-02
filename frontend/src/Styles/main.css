@@ -1,0 +1,22 @@
+@import url(./fontStyle.css);
+@import url(./themes/dark.css);
+
+html {
+    background-color: var(--background-color);
+}
+
+#root {
+    width: 98%;
+    max-width: 1200px;
+    min-width: 250px;
+    margin: auto;
+    margin-top: 10px;
+
+}
+
+
+.shadow {
+    box-shadow: 0 2px 4px 0 #00000040;
+}
+
+

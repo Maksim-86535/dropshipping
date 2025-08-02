@@ -27,6 +27,12 @@ services:
     environment:
       DB_HOST: database
 
+  frontend:
+    build: ./frontend
+    container_name: fronend
+    volumes:
+      - ./frontend/dist:/app/dist
+
   nginx:
     image: nginx:1.29
     container_name: nginx
@@ -35,8 +41,10 @@ services:
       - "80:80"
     depends_on:
       - django
+      - frontend
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./frontend/dist:/data/html
 
 
 volumes:

@@ -1,0 +1,35 @@
+header {
+    background-color: var(--secondary-color);
+    border-radius: 15px;
+    grid-area: 1 / 1 / 2 / 13;
+    height: 50px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+}
+
+header .header-start {
+     grid-area: 1 / 1 / 2 / 2;
+     display: flex;
+     justify-content: left;
+     column-gap: 10px;
+     margin-left: 10px;
+    }
+    header .header-center {
+        grid-area: 1 / 2 / 2 / 3;
+        display: flex;
+        justify-content: center;
+    }
+    header .header-end {
+        grid-area: 1 / 3 / 2 / 4;
+        display: flex;
+        justify-content: right;
+        margin-right: 10px;
+}
+
+header .header-item {
+    align-self: center;
+}
