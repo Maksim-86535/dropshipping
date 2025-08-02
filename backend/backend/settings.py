@@ -23,6 +23,8 @@ INSTALLED_APPS = [
     
     'products',
     'users',
+    'api_for_products',
+
     'rest_framework'
 ]
 
